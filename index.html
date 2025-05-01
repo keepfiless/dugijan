@@ -1,15 +1,11 @@
----
----
-{% include header.html %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Red Theme Website</title>
+    <title>وبسایت قرمز</title>
     <style>
-        /* Mobile-First Base Styles */
+        /* Mobile-First Base Styles - RTL */
         :root {
             --primary-red: #d32f2f;
             --dark-red: #b71c1c;
@@ -32,9 +28,10 @@
             min-height: 100vh;
             background-color: var(--light-gray);
             color: var(--dark-gray);
+            text-align: right; /* RTL text alignment */
         }
 
-        /* Header Styles */
+        /* Header Styles - RTL */
         header {
             background-color: var(--primary-red);
             color: var(--white);
@@ -61,11 +58,13 @@
             color: var(--white);
         }
 
-        /* Mobile Menu */
+        /* Mobile Menu - RTL */
         .menu-toggle {
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            margin-left: 1rem; /* RTL adjustment */
+            margin-right: 0; /* RTL adjustment */
         }
 
         nav ul {
@@ -87,7 +86,7 @@
             background-color: var(--dark-red);
         }
 
-        /* Main Content */
+        /* Main Content - RTL */
         main {
             flex: 1;
             padding: 2rem 1rem;
@@ -109,7 +108,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Footer Styles */
+        /* Footer Styles - RTL */
         footer {
             background-color: var(--dark-red);
             color: var(--white);
@@ -135,6 +134,8 @@
 
         .footer-column ul {
             list-style: none;
+            padding-right: 0; /* RTL adjustment */
+            padding-left: 1rem; /* RTL adjustment */
         }
 
         .footer-column li {
@@ -170,7 +171,7 @@
             border-top: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* Responsive Breakpoints */
+        /* Responsive Breakpoints - RTL */
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
@@ -179,16 +180,17 @@
             nav {
                 position: absolute;
                 top: 100%;
-                left: 0;
+                right: 0; /* RTL adjustment */
+                left: auto; /* RTL adjustment */
                 width: 100%;
                 background-color: var(--dark-red);
                 padding: 1rem;
-                clip-path: circle(0% at 100% 0);
+                clip-path: circle(0% at 0 0); /* RTL adjustment */
                 transition: clip-path 0.5s ease;
             }
 
             nav.active {
-                clip-path: circle(150% at 100% 0);
+                clip-path: circle(150% at 0 0); /* RTL adjustment */
             }
 
             nav ul {
@@ -203,81 +205,81 @@
     </style>
 </head>
 <body>
-    <!-- Header with Navigation -->
+    <!-- Header with Navigation - RTL -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">RedTheme</a>
+            <a href="#" class="logo">وبسایت قرمز</a>
             <div class="menu-toggle">☰</div>
             <nav id="mainNav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">خدمات</a></li>
+                    <li><a href="#">نمونه کارها</a></li>
+                    <li><a href="#">تماس با ما</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Main Content - RTL -->
     <main>
         <section>
-            <h1>Welcome to Our Website</h1>
-            <p>This is a fully responsive, mobile-first website with a beautiful red theme. Resize your browser to see how it adapts to different screen sizes.</p>
+            <h1>به وبسایت ما خوش آمدید</h1>
+            <p>این یک وبسایت کاملاً واکنش‌گرا با طراحی موبایل‌فرست و تم قرمز رنگ است. اندازه پنجره مرورگر خود را تغییر دهید تا نحوه سازگاری آن با اندازه‌های مختلف صفحه را مشاهده کنید.</p>
         </section>
 
         <section>
-            <h2>Our Services</h2>
-            <p>We offer premium web design and development services with a focus on user experience and mobile responsiveness.</p>
+            <h2>خدمات ما</h2>
+            <p>ما خدمات طراحی و توسعه وب با کیفیت بالا ارائه می‌دهیم با تمرکز بر تجربه کاربری و واکنش‌گرایی در دستگاه‌های موبایل.</p>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - RTL -->
     <footer>
         <div class="footer-container">
             <div class="footer-column">
-                <h3>Quick Links</h3>
+                <h3>لینک‌های سریع</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">صفحه اصلی</a></li>
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">خدمات</a></li>
+                    <li><a href="#">تماس</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Services</h3>
+                <h3>خدمات</h3>
                 <ul>
-                    <li><a href="#">Web Design</a></li>
-                    <li><a href="#">Development</a></li>
-                    <li><a href="#">SEO</a></li>
-                    <li><a href="#">Marketing</a></li>
+                    <li><a href="#">طراحی وب</a></li>
+                    <li><a href="#">توسعه نرم‌افزار</a></li>
+                    <li><a href="#">سئو</a></li>
+                    <li><a href="#">دیجیتال مارکتینگ</a></li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Contact Us</h3>
+                <h3>تماس با ما</h3>
                 <ul>
-                    <li>Email: info@redtheme.com</li>
-                    <li>Phone: (123) 456-7890</li>
-                    <li>Address: 123 Red Street</li>
+                    <li>ایمیل: info@redtheme.com</li>
+                    <li>تلفن: ۱۲۳۴۵۶۷۸۹۰</li>
+                    <li>آدرس: تهران، خیابان قرمز</li>
                 </ul>
             </div>
 
             <div class="footer-column">
-                <h3>Follow Us</h3>
+                <h3>ما را دنبال کنید</h3>
                 <div class="social-links">
-                    <a href="#">FB</a>
-                    <a href="#">TW</a>
-                    <a href="#">IG</a>
-                    <a href="#">LI</a>
+                    <a href="#">فیسبوک</a>
+                    <a href="#">توییتر</a>
+                    <a href="#">اینستاگرام</a>
+                    <a href="#">لینکدین</a>
                 </div>
             </div>
         </div>
 
         <div class="copyright">
-            &copy; 2023 RedTheme. All rights reserved.
+            &copy; ۱۴۰۲ وبسایت قرمز. تمام حقوق محفوظ است.
         </div>
     </footer>
 
