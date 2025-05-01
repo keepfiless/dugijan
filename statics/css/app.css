@@ -209,5 +209,6 @@ footer {
     }
 }
 .mainNav>ul>li{
+    border-left: 1px solid rgb(255, 255, 255);
     border-right: 1px solid rgb(255, 255, 255);
 }
