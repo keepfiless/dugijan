@@ -51,6 +51,9 @@ header {
     text-decoration: none;
     color: var(--white);
 }
+.dugijan-logo {
+    max-height: 2.5em;
+}
 
 /* Mobile Menu - RTL */
 .menu-toggle {
