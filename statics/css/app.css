@@ -482,3 +482,6 @@ footer {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+.products-container >a {
+  text-decoration: none;
+}
