@@ -120,3 +120,44 @@ document.addEventListener('DOMContentLoaded', function() {
     new RTLSilder('.rtl-slider-container');
   });
 // slider end 
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Product box hover effects for touch devices
+  const productBoxes = document.querySelectorAll('.product-box');
+  
+  // Add touch support for hover effects
+  productBoxes.forEach(box => {
+    box.addEventListener('touchstart', function() {
+      this.classList.add('hover-effect');
+    });
+    
+    box.addEventListener('touchend', function() {
+      setTimeout(() => {
+        this.classList.remove('hover-effect');
+      }, 200);
+    });
+  });
+
+  // Optional: Lazy loading for images
+  if ('IntersectionObserver' in window) {
+    const lazyImages = document.querySelectorAll('.product-image img');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src || img.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    lazyImages.forEach(img => {
+      if (img.dataset.src) {
+        imageObserver.observe(img);
+      }
+    });
+  }
+});
