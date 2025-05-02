@@ -108,7 +108,7 @@ body {
     background-color: var(--light-gray);
     color: var(--dark-gray);
     text-align: right;
-    /* RTL text alignment */
+   font-size: 20px !important;
 }
 
 /* Header Styles - RTL */
