@@ -324,7 +324,10 @@ footer {
   .rtl-slide {
     min-width: 100%;
     height: 100%;
-    flex-shrink: 0;
+    display: flex;
+    align-items: center; /* Vertical center */
+    justify-content: center; /* Horizontal center */
+    background: #f5f5f5; /* Optional: Visualizes slide area */
   }
   
   .rtl-slide img {
