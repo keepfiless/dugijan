@@ -328,10 +328,11 @@ footer {
   }
   
   .rtl-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
-    display: block;
+    max-width: 100%; /* Prevents horizontal overflow */
+    max-height: 100%; /* Prevents vertical overflow */
+    width: auto; /* Original width */
+    height: auto; /* Original height */
+    object-fit: contain; /* Ensures no stretching */
   }
   
   /* Navigation Dots */
