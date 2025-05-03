@@ -476,7 +476,7 @@ footer {
   }
 }
 .product-price {
-  background-color: var(--dark-red);
+  background-color: var(--primary-red);
   color: var(--light-gray);
 }
 
