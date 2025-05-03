@@ -34,17 +34,34 @@
     // Get DOM elements with null checks
     const elements = {
         addToCartBtn: getElement('#addToCartBtn', 'Add to cart button missing'),
-        cartIcon: getElement('#cartIcon', 'Cart icon missing'),
+        cartMenuItem: getElement('#cart-menu-item', 'Cart menu item missing'),
+        cartCount: getElement('#cart-menu-item .cart-count', 'Cart count indicator missing'),
         cartModal: getElement('#cartModal', 'Cart modal missing'),
         closeCart: getElement('.close-cart', 'Close cart button missing'),
         cartItems: getElement('#cartItems', 'Cart items container missing'),
         cartTotal: getElement('#cartTotalPrice', 'Cart total price missing'),
-        cartCount: getElement('.cart-count', 'Cart count indicator missing'),
         checkoutBtn: getElement('#checkoutBtn', 'Checkout button missing'),
         productName: getElement('#product-name', 'Product name element missing'),
         productPrice: getElement('.price', 'Product price element missing'),
         productStatus: getElement('.availability', 'Product status element missing')
     };
+    
+    // Function to open cart modal
+    function openCartModal() {
+        if (elements.cartModal) {
+            elements.cartModal.style.display = 'block';
+            document.body.classList.add('modal-open');
+            updateCartUI();
+        }
+    }
+    
+    // Function to close cart modal
+    function closeCartModal() {
+        if (elements.cartModal) {
+            elements.cartModal.style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    }
     
     // Add to Cart Functionality with validation
     if (elements.addToCartBtn) {
@@ -83,7 +100,40 @@
             saveCart();
             updateCartUI();
             alert(`${product.name} به سبد خرید اضافه شد!`);
+            
+            // Open cart modal automatically after adding item
+            openCartModal();
         });
+    }
+    
+    // Cart menu item click handler
+    if (elements.cartMenuItem) {
+        elements.cartMenuItem.addEventListener('click', function(e) {
+            e.preventDefault();
+            openCartModal();
+        });
+    }
+    
+    // Close modal when clicking outside content
+    document.addEventListener('click', function(e) {
+        if (elements.cartModal && elements.cartModal.style.display === 'block') {
+            // Check if click is outside cart content
+            if (!e.target.closest('.cart-content') && !e.target.closest('#cart-menu-item')) {
+                closeCartModal();
+            }
+        }
+    });
+    
+    // Close modal with escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && elements.cartModal && elements.cartModal.style.display === 'block') {
+            closeCartModal();
+        }
+    });
+    
+    // Close button handler
+    if (elements.closeCart) {
+        elements.closeCart.addEventListener('click', closeCartModal);
     }
     
     // Helper function to safely parse price
@@ -134,7 +184,16 @@
         const totalItems = cart.reduce((total, item) => {
             return total + (item && item.quantity ? item.quantity : 0);
         }, 0);
+        
+        // Update cart count in menu
         elements.cartCount.textContent = totalItems;
+        
+        // Highlight menu item when cart has items
+        if (totalItems > 0) {
+            elements.cartMenuItem.classList.add('has-items');
+        } else {
+            elements.cartMenuItem.classList.remove('has-items');
+        }
     
         // Clear and rebuild cart items
         elements.cartItems.innerHTML = '';
@@ -186,20 +245,6 @@
         });
     }
     
-    // Cart Modal Toggle with null checks
-    if (elements.cartIcon && elements.cartModal) {
-        elements.cartIcon.addEventListener('click', () => {
-            elements.cartModal.style.display = 'block';
-            updateCartUI();
-        });
-    }
-    
-    if (elements.closeCart && elements.cartModal) {
-        elements.closeCart.addEventListener('click', () => {
-            elements.cartModal.style.display = 'none';
-        });
-    }
-    
     // Checkout Functionality with validation
     if (elements.checkoutBtn) {
         elements.checkoutBtn.addEventListener('click', () => {
@@ -226,4 +271,4 @@
             console.error('Error initializing cart UI:', e);
         }
     });
-    </script>
+</script>

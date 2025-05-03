@@ -169,6 +169,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--dark-red);
+    color:var(--white);
 }
 
 /* Main Content - RTL */
@@ -604,27 +605,11 @@ a{
   flex-wrap: wrap;
 }
 
-.product-image {
-  flex: 1;
-  min-width: 300px;
-}
 
-.product-image img {
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-  border-radius: 8px;
-}
 
 .product-details {
   flex: 1;
   min-width: 300px;
-}
-
-.product-price {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #c00;
 }
 
 .product-status {
@@ -752,19 +737,6 @@ a{
   font-size: 1rem;
 }
 
-/* Cart Icon Styles */
-.cart-icon {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  background: white;
-  padding: 10px;
-  border-radius: 50%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  cursor: pointer;
-  z-index: 999;
-}
-
 .cart-count {
   background: red;
   color: white;
@@ -772,4 +744,61 @@ a{
   padding: 2px 6px;
   font-size: 0.8rem;
   margin-left: 5px;
+}
+/* Cart Menu Item Styles */
+#cart-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#cart-menu-item .cart-count {
+  margin-right: 5px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+/* Highlight when cart has items */
+#cart-menu-item.has-items {
+  font-weight: bold;
+  color: #4CAF50;
+}
+
+/* Mobile menu adjustments */
+@media (max-width: 768px) {
+  .main-menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .main-menu a {
+      padding: 8px 12px;
+  }
+}
+.cart-menu{
+  background-color: var(--light-gray);
+  color: var(--dark-red);
+}
+#cart-menu-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+#cart-menu-item .cart-count {
+  margin-right: 5px;
+  background: #ff4444;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+#cart-menu-item.has-items {
+  font-weight: bold;
+  color: #4CAF50;
 }
