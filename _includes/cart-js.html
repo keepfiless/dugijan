@@ -129,11 +129,11 @@
         });
     }
     
-    // Close modal when clicking outside content
+    // Close modal when clicking outside content (modified to be more specific)
     document.addEventListener('click', function(e) {
         if (elements.cartModal && elements.cartModal.style.display === 'block') {
-            // Check if click is outside cart content
-            if (!e.target.closest('.cart-content') && !e.target.closest('#cart-menu-item')) {
+            // Only close if clicking directly on the modal backdrop (not its children)
+            if (e.target === elements.cartModal) {
                 closeCartModal();
             }
         }
@@ -249,9 +249,10 @@
         
         elements.cartTotal.textContent = totalPrice.toLocaleString() + ' تومان';
         
-        // Add event listeners to quantity buttons
+        // Add event listeners to quantity buttons (with stopPropagation)
         document.querySelectorAll('.quantity-btn.plus').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event from bubbling up
                 const index = parseInt(e.target.dataset.index);
                 updateQuantity(index, 1);
             });
@@ -259,6 +260,7 @@
         
         document.querySelectorAll('.quantity-btn.minus').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event from bubbling up
                 const index = parseInt(e.target.dataset.index);
                 updateQuantity(index, -1);
             });
@@ -267,6 +269,7 @@
         // Add event listeners to remove buttons
         document.querySelectorAll('.remove-item').forEach(button => {
             button.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent event from bubbling up
                 const index = parseInt(e.target.dataset.index);
                 if (!isNaN(index) && index >= 0 && index < cart.length) {
                     cart.splice(index, 1);
