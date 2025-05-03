@@ -246,7 +246,7 @@
             `;
             elements.cartItems.appendChild(cartItemElement);
         });
-        
+        totalPrice += 79000;
         elements.cartTotal.textContent = totalPrice.toLocaleString() + ' تومان';
         
         // Add event listeners to quantity buttons (with stopPropagation)
@@ -291,7 +291,7 @@
             
             if (total > 0 && cart.length > 0) {
                alert('در قسمت توضیحات درگاه بانکی آدرس +‌کد پستی نوشته و پرداخت را بزنید ');
-                window.location.href = `https://zarinp.al/avasam.ir?amount=${total*10}`;
+                window.location.href = `https://zarinp.al/avasam.ir?amount=${(total*10)+79000}`;
             } else {
                 alert('سبد خرید شما خالی است');
             }
