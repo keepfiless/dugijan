@@ -866,3 +866,60 @@ body.modal-open {
   cursor: pointer;
   margin-right: 10px;
 }
+
+/* Quantity Controls */
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-btn {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.quantity-btn:hover {
+  background: #e0e0e0;
+}
+
+.quantity-btn:active {
+  transform: scale(0.95);
+}
+
+.item-quantity {
+  min-width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.remove-item {
+  background: #ff4444;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 0.2s;
+}
+
+.remove-item:hover {
+  background: #dd3333;
+}
+
+/* Prevent modal close when clicking on buttons */
+.quantity-btn, .remove-item {
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+}
