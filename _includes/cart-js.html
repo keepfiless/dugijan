@@ -1,0 +1,109 @@
+<script>
+    // Initialize cart
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    // DOM Elements
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const cartIcon = document.getElementById('cartIcon');
+    const cartModal = document.getElementById('cartModal');
+    const closeCart = document.querySelector('.close-cart');
+    const cartItemsContainer = document.getElementById('cartItems');
+    const cartTotalPrice = document.getElementById('cartTotalPrice');
+    const cartCount = document.querySelector('.cart-count');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    
+    // Add to Cart Functionality
+    addToCartBtn.addEventListener('click', () => {
+        const product = {
+            name: document.getElementById('product-name').innerText,
+            slug: '{{page.product_slug}}',
+            price: parseInt('{{page.product_price}}'),
+            status: document.querySelector('.availability').innerText,
+            quantity: 1
+        };
+    
+        // Check if product exists in cart
+        const existingItem = cart.find(item => item.slug === product.slug);
+        
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push(product);
+        }
+    
+        // Save to localStorage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Update UI
+        updateCartUI();
+        
+        // Show confirmation
+        alert(`${product.name} به سبد خرید اضافه شد!`);
+    });
+    
+    // Update Cart UI
+    function updateCartUI() {
+        // Update cart count
+        const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+        cartCount.innerText = totalItems;
+        
+        // Update cart items
+        cartItemsContainer.innerHTML = '';
+        let totalPrice = 0;
+        
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            totalPrice += itemTotal;
+            
+            const cartItemElement = document.createElement('div');
+            cartItemElement.className = 'cart-item';
+            cartItemElement.innerHTML = `
+                <div class="cart-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.price.toLocaleString()} تومان</p>
+                </div>
+                <div class="cart-item-quantity">
+                    <span>${item.quantity} عدد</span>
+                    <button class="remove-item" data-index="${index}">حذف</button>
+                </div>
+                <div class="cart-item-price">
+                    ${itemTotal.toLocaleString()} تومان
+                </div>
+            `;
+            cartItemsContainer.appendChild(cartItemElement);
+        });
+        
+        // Update total price
+        cartTotalPrice.innerText = totalPrice.toLocaleString() + ' تومان';
+        
+        // Add event listeners to remove buttons
+        document.querySelectorAll('.remove-item').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = e.target.dataset.index;
+                cart.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCartUI();
+            });
+        });
+    }
+    
+    // Cart Modal Toggle
+    cartIcon.addEventListener('click', () => {
+        cartModal.style.display = 'block';
+        updateCartUI();
+    });
+    
+    closeCart.addEventListener('click', () => {
+        cartModal.style.display = 'none';
+    });
+    
+    // Checkout Functionality
+    checkoutBtn.addEventListener('click', () => {
+        const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        alert(`در حال انتقال به درگاه پرداخت برای مبلغ ${total.toLocaleString()} تومان`);
+        // window.location.href = `/checkout?amount=${total}`;
+    });
+    
+    // Initialize on page load
+    updateCartUI();
+    </script>
