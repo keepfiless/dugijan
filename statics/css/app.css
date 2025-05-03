@@ -476,7 +476,8 @@ footer {
   }
 }
 .product-price {
-  color: var(--dark-red);
+  background-color: var(--dark-red);
+  color: var(--light-gray);
 }
 
 /* Large Desktop Styles */
