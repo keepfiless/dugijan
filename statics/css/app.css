@@ -489,3 +489,50 @@ footer {
 .products-container >a {
   text-decoration: none;
 }
+/* Button Container */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual Buttons */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  background: var(--dark-red);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover Effect */
+.btn:hover {
+  background: var(--white);
+  color: #b71c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Active State */
+.btn:active {
+  transform: translateY(0);
+}
+.social-icon {
+  text-decoration: none;
+  color: var(--dark-red);
+}
+a{
+  color: var(--dark-red);
+}

@@ -161,3 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+// buttons clicked 
+document.querySelectorAll('.btn').forEach(button => {
+  button.addEventListener('click', function(e) {
+      // Optional: Add click tracking or other functionality
+      console.log('Button clicked:', this.textContent);
+      
+      // Uncomment to prevent default link behavior
+      // e.preventDefault();
+  });
+});

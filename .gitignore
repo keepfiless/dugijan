@@ -1,1 +1,23 @@
+# Jekyll generated files
 _site/
+.jekyll-cache/
+.jekyll-metadata
+
+# Dependency directories
+node_modules/
+vendor/
+.bundle/
+
+# Environment files
+.env
+.env.local
+
+# OS/Editor files
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/
+
+# Optional (if not using Bundler)
+Gemfile.lock
