@@ -442,7 +442,7 @@ footer {
 .product-title {
   padding: 12px;
   text-align: center;
-  font-size: 14px;
+  font-size: 20px;
   color: #333;
   font-weight: 500;
   white-space: nowrap;
@@ -458,7 +458,7 @@ footer {
   }
   
   .product-title {
-    font-size: 15px;
+    font-size: 19px;
     padding: 15px;
   }
 }
@@ -472,7 +472,7 @@ footer {
   }
   
   .product-title {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
