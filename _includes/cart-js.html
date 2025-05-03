@@ -290,8 +290,8 @@
             }, 0);
             
             if (total > 0 && cart.length > 0) {
-                alert(`در حال انتقال به درگاه پرداخت برای مبلغ ${total.toLocaleString()} تومان`);
-                // window.location.href = `/checkout?amount=${total}`;
+               alert('در قسمت توضیحات درگاه بانکی آدرس +‌کد پستی نوشته و پرداخت را بزنید ');
+                window.location.href = `https://zarinp.al/avasam.ir?amount=${total*10}`;
             } else {
                 alert('سبد خرید شما خالی است');
             }
