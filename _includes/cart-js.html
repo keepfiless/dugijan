@@ -63,6 +63,21 @@
         }
     }
     
+    // Update item quantity in cart
+    function updateQuantity(index, change) {
+        if (index >= 0 && index < cart.length) {
+            cart[index].quantity += change;
+            
+            // Remove item if quantity reaches zero
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            saveCart();
+            updateCartUI();
+        }
+    }
+    
     // Add to Cart Functionality with validation
     if (elements.addToCartBtn) {
         elements.addToCartBtn.addEventListener('click', () => {
@@ -101,7 +116,7 @@
             updateCartUI();
             alert(`${product.name} به سبد خرید اضافه شد!`);
             
-            // Open cart modal automatically after adding item
+            // Open cart modal automatically
             openCartModal();
         });
     }
@@ -220,7 +235,9 @@
                     <p>${itemPrice.toLocaleString()} تومان</p>
                 </div>
                 <div class="cart-item-quantity">
-                    <span>${itemQuantity} عدد</span>
+                    <button class="quantity-btn minus" data-index="${index}">-</button>
+                    <span class="item-quantity">${itemQuantity}</span>
+                    <button class="quantity-btn plus" data-index="${index}">+</button>
                     <button class="remove-item" data-index="${index}">حذف</button>
                 </div>
                 <div class="cart-item-price">
@@ -231,6 +248,21 @@
         });
         
         elements.cartTotal.textContent = totalPrice.toLocaleString() + ' تومان';
+        
+        // Add event listeners to quantity buttons
+        document.querySelectorAll('.quantity-btn.plus').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = parseInt(e.target.dataset.index);
+                updateQuantity(index, 1);
+            });
+        });
+        
+        document.querySelectorAll('.quantity-btn.minus').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const index = parseInt(e.target.dataset.index);
+                updateQuantity(index, -1);
+            });
+        });
         
         // Add event listeners to remove buttons
         document.querySelectorAll('.remove-item').forEach(button => {
