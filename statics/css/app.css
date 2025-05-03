@@ -475,6 +475,9 @@ footer {
     font-size: 18px;
   }
 }
+.product-price {
+  color: var(--dark-red);
+}
 
 /* Large Desktop Styles */
 @media (min-width: 1200px) {
