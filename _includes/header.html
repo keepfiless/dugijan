@@ -6,8 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="{{ page.canonical }}" />
     <title>{% if page.title %}{{ page.title }}{% else %} دوگیجان {% endif %}</title>
-    <link rel="stylesheet" href="/statics/css/app.css?v=2">
+    
+
+      <!-- Preload CSS -->
+  <link rel="preload" href="/statics/css/app.css?v=3" as="style">
+  <link rel="preload" href="/statics/css/icons.css" as="style">
+  
+  
+  <!-- Load CSS asynchronously -->
+  <link rel="stylesheet" href="/statics/css/app.css?v=3" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="/statics/css/icons.css" media="print" onload="this.media='all'">
+  
+  <!-- Fallback for JS-disabled browsers -->
+  <noscript>
+    <link rel="stylesheet" href="/statics/css/app.css?v=3">
     <link rel="stylesheet" href="/statics/css/icons.css">
+  </noscript>
+
+  <!-- Hide content until CSS/fonts load -->
+  <style>
+    body {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  </style>
+
 </head>
 
 <body>
