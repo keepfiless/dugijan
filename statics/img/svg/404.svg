@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <!-- Transparent background (removed fill) -->
+  
+  <!-- 404 Text (Food-themed colors) -->
+  <text x="300" y="100" font-family="Arial" font-size="80" font-weight="bold" text-anchor="middle" fill="#e74c3c">خطای ۴۰۴ </text>
+  <text x="300" y="140" font-family="Arial" font-size="24" text-anchor="middle" fill="#e67e22">به نظر میرسه گم شدید</text>
+  <text x="300" y="170" font-family="Arial" font-size="16" text-anchor="middle" fill="#7f8c8d">صفحه ی درخواستی شما موجود نیست</text>
+
+  <!-- Chef Girl (Animated) -->
+  <g transform="translate(300, 280)">
+    <!-- Head -->
+    <circle cx="0" cy="-40" r="30" fill="#ffdbac" />
+    
+    <!-- Chef Hat -->
+    <path d="M-25,-70 L25,-70 L20,-50 Q0,-60 -20,-50 Z" fill="white" stroke="#333" stroke-width="1" />
+    
+    <!-- Body (Apron) -->
+    <path d="M-20,0 L20,0 L15,60 Q0,70 -15,60 Z" fill="#f39c12" />
+    <path d="M-20,0 L-15,30 Q0,25 15,30 L20,0" fill="white" />
+    
+    <!-- Arms (Stirring Animation) -->
+    <g id="arms">
+      <!-- Left Arm (Holding Bowl) -->
+      <path d="M-20,0 L-40,20" stroke="#ffdbac" stroke-width="4" fill="none" />
+      <circle cx="-40" cy="20" r="10" fill="#f1c40f" />
+      <circle cx="-40" cy="20" r="7" fill="#e67e22" />
+      
+      <!-- Right Arm (Stirring) -->
+      <path d="M20,0 L40,10" stroke="#ffdbac" stroke-width="4" fill="none">
+        <animateTransform 
+          attributeName="transform"
+          type="rotate"
+          values="0,20,0; 10,20,0; -5,20,0; 0,20,0"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </path>
+      <!-- Spoon -->
+      <path d="M40,10 L50,5 L48,15 Z" fill="#95a5a6" />
+    </g>
+    
+    <!-- Face -->
+    <circle cx="-10" cy="-45" r="3" fill="#333" />
+    <circle cx="10" cy="-45" r="3" fill="#333" />
+    <path d="M-8,-30 Q0,-25 8,-30" stroke="#333" stroke-width="2" fill="none" />
+    
+    <!-- Blush -->
+    <circle cx="-15" cy="-35" r="4" fill="#ff9999" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="15" cy="-35" r="4" fill="#ff9999" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="3s" repeatCount="indefinite" begin="1s" />
+    </circle>
+  </g>
+
+  <!-- Floating Food Items -->
+  <g transform="translate(100, 100)">
+    <!-- Floating Pizza -->
+    <circle cx="0" cy="0" r="15" fill="#f1c40f" />
+    <path d="M-10,-5 L10,5 M10,-5 L-10,5" stroke="#e74c3c" stroke-width="2" />
+    <animateTransform 
+      attributeName="transform"
+      type="translate"
+      values="100,100; 100,90; 100,100"
+      dur="4s"
+      repeatCount="indefinite"
+    />
+  </g>
+  
+  <g transform="translate(450, 150)">
+    <!-- Floating Burger -->
+    <rect x="-15" y="-10" width="30" height="7" fill="#8b4513" />
+    <rect x="-12" y="-3" width="24" height="6" fill="#f39c12" />
+    <rect x="-15" y="3" width="30" height="5" fill="#e74c3c" />
+    <animateTransform 
+      attributeName="transform"
+      type="translate"
+      values="450,150; 450,140; 450,150"
+      dur="5s"
+      repeatCount="indefinite"
+      begin="0.5s"
+    />
+  </g>
+</svg>
