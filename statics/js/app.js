@@ -209,4 +209,16 @@ document.addEventListener('DOMContentLoaded', function() {
     .catch(showContent); // Show content even if something fails
 });
 
+  // If CSS hasn't loaded after 3 seconds, force it
+  setTimeout(() => {
+    const links = document.querySelectorAll('link[rel="stylesheet"]');
+    links.forEach(link => {
+      if (!link.sheet) {
+        const newLink = link.cloneNode();
+        newLink.href = link.href + '?retry=' + Date.now();
+        link.parentNode.replaceChild(newLink, link);
+      }
+    });
+  }, 3000);
+
 // end loading css 
