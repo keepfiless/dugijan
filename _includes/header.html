@@ -2,51 +2,76 @@
 <html lang="fa" dir="rtl">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="{{ page.canonical }}" />
-    <title>{% if page.title %}{{ page.title }}{% else %} دوگیجان {% endif %}</title>
-  
-    <style>
-      body {
-        opacity: 0;
-        visibility: hidden;
-      }
-    </style>
-    
-    <link rel="stylesheet" href="/statics/css/app.css?v=3.2">
-    <link rel="stylesheet" href="/statics/css/icons.css">
-    
-    <script>
-      // Wait for both CSS and fonts to load
-      document.addEventListener('DOMContentLoaded', function() {
-        // Check if fonts are loaded (this works for most cases)
-        document.fonts.ready.then(function() {
-          document.body.style.opacity = '1';
-          document.body.style.visibility = 'visible';
-        });
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="{{ page.canonical }}" />
+  <!-- favicon load -->
+  <!-- Basic favicons -->
+  <link rel="icon" href="{{ '/statics/img/favicon/favicon.ico' | relative_url }}" type="image/x-icon">
+  <link rel="icon" href="{{ '/statics/img/favicon/favicon-32x32.png' | relative_url }}" type="image/png" sizes="32x32">
+  <link rel="icon" href="{{ '/statics/img/favicon/favicon-16x16.png' | relative_url }}" type="image/png" sizes="16x16">
+
+  <!-- Apple touch icon -->
+  <link rel="apple-touch-icon" href="{{ '/statics/img/favicon/apple-touch-icon.png' | relative_url }}" sizes="180x180">
+
+  <!-- Android Chrome icons -->
+  <link rel="manifest" href="{{ '/statics/img/favicon/site.webmanifest' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+  <!-- end favicon loading -->
+  <title>{% if page.title %}{{ page.title }}{% else %} دوگیجان {% endif %}</title>
+
+  <style>
+    body {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/statics/css/app.css?v=3.2">
+  <link rel="stylesheet" href="/statics/css/icons.css">
+
+  <script>
+    // Wait for both CSS and fonts to load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Check if fonts are loaded (this works for most cases)
+      document.fonts.ready.then(function () {
+        document.body.style.opacity = '1';
+        document.body.style.visibility = 'visible';
       });
-    </script>
+    });
+  </script>
 
 </head>
 
 <body>
-    <!-- Header with Navigation - RTL -->
-    <header>
-        <div class="header-container">
-            <a href="{{ site.url }}" class="logo">
-                <img class="dugijan-logo" src="/statics/img/dugijan-logo.svg?v=1" alt="لوگو وب سایت دوگیجان">
-            </a>
-            <div class="menu-toggle">☰</div>
-            <nav id="mainNav">
-                <ul>
-                    <a href="{{ site.url }}"><li>صفحه اصلی </li></a>
-                    <a href="{{site.url}}/page/products"><li>محصولات</li></a>
-                    <a href="{{site.url}}/page/submit-order"><li>نحوه ی ثبت سفارش</li></a>
-                    <a href="{{site.url}}/page/blog"><li>وبلاگ</li></a>
-                    <a href="{{site.url}}/page/contact"><li>تماس با ما</li></a>
-                    <a href="#" id="cart-menu-item" class="cart-menu"><li>سبد خرید (<span class="cart-count">0</span>)</li></a>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Header with Navigation - RTL -->
+  <header>
+    <div class="header-container">
+      <a href="{{ site.url }}" class="logo">
+        <img class="dugijan-logo" src="/statics/img/dugijan-logo.svg?v=1" alt="لوگو وب سایت دوگیجان">
+      </a>
+      <div class="menu-toggle">☰</div>
+      <nav id="mainNav">
+        <ul>
+          <a href="{{ site.url }}">
+            <li>صفحه اصلی </li>
+          </a>
+          <a href="{{site.url}}/page/products">
+            <li>محصولات</li>
+          </a>
+          <a href="{{site.url}}/page/submit-order">
+            <li>نحوه ی ثبت سفارش</li>
+          </a>
+          <a href="{{site.url}}/page/blog">
+            <li>وبلاگ</li>
+          </a>
+          <a href="{{site.url}}/page/contact">
+            <li>تماس با ما</li>
+          </a>
+          <a href="#" id="cart-menu-item" class="cart-menu">
+            <li>سبد خرید (<span class="cart-count">0</span>)</li>
+          </a>
+        </ul>
+      </nav>
+    </div>
+  </header>
