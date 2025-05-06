@@ -7,9 +7,27 @@
     <link rel="canonical" href="{{ page.canonical }}" />
     <title>{% if page.title %}{{ page.title }}{% else %} دوگیجان {% endif %}</title>
   
-  <link rel="stylesheet" href="/statics/css/app.css?v=3">
-  <link rel="stylesheet" href="/statics/css/icons.css">
-  
+    <style>
+      body {
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+    
+    <link rel="stylesheet" href="/statics/css/app.css?v=3">
+    <link rel="stylesheet" href="/statics/css/icons.css">
+    
+    <script>
+      // Wait for both CSS and fonts to load
+      document.addEventListener('DOMContentLoaded', function() {
+        // Check if fonts are loaded (this works for most cases)
+        document.fonts.ready.then(function() {
+          document.body.style.opacity = '1';
+          document.body.style.visibility = 'visible';
+        });
+      });
+    </script>
+
 </head>
 
 <body>
