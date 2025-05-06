@@ -171,8 +171,48 @@ document.querySelectorAll('.btn').forEach(button => {
     // e.preventDefault();
   });
 });
+// shamsi date 
+// Wait for both DOM and PersianDate to be ready
+function initializeDates() {
+  // Check if PersianDate is loaded
+  if (typeof PersianDate === 'undefined') {
+      console.error('PersianDate library not loaded!');
+      return;
+  }
 
-// lazy loading body 
+  // Get current date
+  const today = new Date();
+  
+  // Calculate tomorrow's date
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+  
+  // Calculate date 3 days later
+  const threeDaysLater = new Date(today);
+  threeDaysLater.setDate(today.getDate() + 3);
+  
+  // Convert to Shamsi
+  const pdTomorrow = new PersianDate(tomorrow);
+  const pdThreeDaysLater = new PersianDate(threeDaysLater);
+  
+  // Format and display
+  document.getElementById('tomorrow-date').textContent = pdTomorrow.format('YYYY/MM/DD');
+  document.getElementById('three-days-later').textContent = pdThreeDaysLater.format('YYYY/MM/DD');
+}
 
-
-// end lazy loading body
+// Wait for everything to load
+document.addEventListener('DOMContentLoaded', function() {
+  // Check immediately
+  if (typeof PersianDate !== 'undefined') {
+      initializeDates();
+  } else {
+      // If not loaded yet, wait a bit more
+      const checkInterval = setInterval(function() {
+          if (typeof PersianDate !== 'undefined') {
+              clearInterval(checkInterval);
+              initializeDates();
+          }
+      }, 100);
+  }
+});
+// end shamsi date 
