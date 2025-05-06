@@ -738,11 +738,15 @@ a {
 
 .cart-item-info {
   flex: 2;
+  font-size: 14px;
 }
-
+.cart-item-info p {
+  color:var(--dark-red);
+}
 .cart-item-price {
   flex: 1;
   text-align: left;
+  font-size: 14px;
 }
 
 .cart-item-quantity {
