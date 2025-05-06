@@ -967,3 +967,16 @@ body.modal-open {
   position: relative;
   z-index: 2;
 }
+/* color helpers  */
+.has-text-primary{
+  color: var(--dark-red);
+}
+.box{
+  border-radius: 15px;
+  padding: 10px;
+  border:1px solid gray;
+  margin:2px;
+}
+.has-text-weight-bold{
+  font-weight: bold;
+}

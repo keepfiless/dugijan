@@ -174,14 +174,8 @@ document.querySelectorAll('.btn').forEach(button => {
 
 
 // shamsi date -------------------------
-// Wait for both DOM and PersianDate to be ready
-function initializeDates() {
-  // Check if PersianDate is loaded
-  if (typeof PersianDate === 'undefined') {
-      console.error('PersianDate library not loaded!');
-      return;
-  }
 
+function displayShamsiDates() {
   // Get current date
   const today = new Date();
   
@@ -193,28 +187,40 @@ function initializeDates() {
   const threeDaysLater = new Date(today);
   threeDaysLater.setDate(today.getDate() + 3);
   
-  // Convert to Shamsi
-  const pdTomorrow = new PersianDate(tomorrow);
-  const pdThreeDaysLater = new PersianDate(threeDaysLater);
-  
-  // Format and display
-  document.getElementById('tomorrow-date').textContent = pdTomorrow.format('YYYY/MM/DD');
-  document.getElementById('three-days-later').textContent = pdThreeDaysLater.format('YYYY/MM/DD');
+  try {
+      // Convert to Shamsi
+      const pdTomorrow = new persianDate(tomorrow);
+      const pdThreeDaysLater = new persianDate(threeDaysLater);
+      
+      // Format and display
+      document.getElementById('tomorrow-date').textContent = pdTomorrow.format('YYYY/MM/DD');
+      document.getElementById('three-days-later').textContent = pdThreeDaysLater.format('YYYY/MM/DD');
+  } catch (e) {
+      console.error("Failed to display Shamsi dates:", e);
+      document.getElementById('tomorrow-date').textContent = "Error loading date";
+      document.getElementById('three-days-later').textContent = "Error loading date";
+  }
 }
 
-// Wait for everything to load
+function waitForPersianDate(callback, timeout = 3000) {
+  const startTime = Date.now();
+  
+  const checkInterval = setInterval(function() {
+      if (typeof persianDate !== 'undefined') {
+          clearInterval(checkInterval);
+          callback();
+      } else if (Date.now() - startTime > timeout) {
+          clearInterval(checkInterval);
+          console.error("PersianDate library failed to load after " + timeout + "ms");
+          document.getElementById('tomorrow-date').textContent = "Date library not loaded";
+          document.getElementById('three-days-later').textContent = "Date library not loaded";
+      }
+  }, 100);
+}
+
+// Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-  // Check immediately
-  if (typeof PersianDate !== 'undefined') {
-      initializeDates();
-  } else {
-      // If not loaded yet, wait a bit more
-      const checkInterval = setInterval(function() {
-          if (typeof PersianDate !== 'undefined') {
-              clearInterval(checkInterval);
-              initializeDates();
-          }
-      }, 100);
-  }
+  waitForPersianDate(displayShamsiDates);
 });
+
 // end shamsi date -------------------------
