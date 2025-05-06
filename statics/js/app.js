@@ -171,7 +171,9 @@ document.querySelectorAll('.btn').forEach(button => {
     // e.preventDefault();
   });
 });
-// shamsi date 
+
+
+// shamsi date -------------------------
 // Wait for both DOM and PersianDate to be ready
 function initializeDates() {
   // Check if PersianDate is loaded
@@ -215,4 +217,4 @@ document.addEventListener('DOMContentLoaded', function() {
       }, 100);
   }
 });
-// end shamsi date 
+// end shamsi date -------------------------
