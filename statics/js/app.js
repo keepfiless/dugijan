@@ -172,53 +172,7 @@ document.querySelectorAll('.btn').forEach(button => {
   });
 });
 
-// load css and fonts before site loading 
+// lazy loading body 
 
-// Unhide content when CSS and fonts are ready
-// Unhide content when CSS and fonts are ready
-document.addEventListener('DOMContentLoaded', function() {
-  const showContent = () => {
-    document.body.style.visibility = 'visible';
-    document.body.style.opacity = 1;
-  };
 
-  // If no stylesheets, show immediately
-  const stylesheets = document.querySelectorAll('link[rel=stylesheet]');
-  if (stylesheets.length === 0) {
-    showContent();
-    return;
-  }
-
-  // Wait for CSS to load
-  const cssPromises = Array.from(stylesheets).map(link => {
-    return new Promise(resolve => {
-      if (link.sheet) {
-        resolve();
-      } else {
-        link.onload = resolve;
-        link.onerror = resolve; // Don't block if a stylesheet fails to load
-      }
-    });
-  });
-
-  // Wait for fonts if Font Loading API is available
-  const fontPromise = document.fonts ? document.fonts.ready : Promise.resolve();
-
-  Promise.all([...cssPromises, fontPromise])
-    .then(showContent)
-    .catch(showContent); // Show content even if something fails
-});
-
-  // If CSS hasn't loaded after 3 seconds, force it
-  setTimeout(() => {
-    const links = document.querySelectorAll('link[rel="stylesheet"]');
-    links.forEach(link => {
-      if (!link.sheet) {
-        const newLink = link.cloneNode();
-        newLink.href = link.href + '?retry=' + Date.now();
-        link.parentNode.replaceChild(newLink, link);
-      }
-    });
-  }, 3000);
-
-// end loading css 
+// end lazy loading body
