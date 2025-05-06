@@ -185,7 +185,7 @@ function displayShamsiDates() {
   
   // Calculate date 3 days later
   const threeDaysLater = new Date(today);
-  threeDaysLater.setDate(today.getDate() + 3);
+  threeDaysLater.setDate(today.getDate() + 4);
   
   try {
       // Convert to Shamsi
