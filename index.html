@@ -53,5 +53,15 @@
         <p style="text-align: right;">فرآیند تخمیر قند درون مواد را مصرف میکند و محصول جدیدی را تولید میکند محصول جدید
             ممکن است یک قارچ کامبوچای جدید باشد یا یک ترشی کیمچی !&zwnj;&nbsp;</p>
     </section>
+
+    <section>
+      <ul>
+        {% for product in site.products %}
+          <li>
+            <a href="{{ product.url }}">{{ product.name }}</a> - {{ product.price }} تومان
+          </li>
+        {% endfor %}
+      </ul>
+    </section>
 </main>
 {% include footer.html %}
