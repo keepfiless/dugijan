@@ -5,4 +5,4 @@ baseurl: ""                        # Leave empty or use "/repo" for project site
 collections:
   products:
     output: true
-    permalink: /products/:name/
+    permalink: /products/:slug/
