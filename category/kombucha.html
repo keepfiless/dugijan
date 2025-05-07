@@ -1,0 +1,28 @@
+---
+canonical: "https://dugijan.ir/category/produce"
+title: "مولد های تولید محصولات پروبیوتیکی"
+---
+
+{% include header.html %}
+<main>
+    <div class="category-content">
+        <h1>دسته بندی محصولات کامبوچا</h1>
+    </div>
+    {% assign kombucha-items = site.products | where_exp: "item", "item.path contains '_products/kombucha/'" %}
+
+    <div class="products-container">
+        {% for product in kombucha-items %}
+
+        <a class="product-box" href="{{product.url}}">
+            <div class="product-image">
+                <img src="{{product.image}}" alt="{{product.title}}">
+            </div>
+            <div class="product-title">{{product.name}}</div>
+            <div class=" product-title product-price">{{product.price}} تومان</div>
+        </a>
+
+        {% endfor %}
+
+    </div>
+</main>
+{% include footer.html %}

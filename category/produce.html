@@ -8,31 +8,35 @@ title: "مولد های تولید محصولات پروبیوتیکی"
   <div class="">
     در این بخش مولد ها یعنی مواد لازم برای تولید انواع خوراکی ها و نوشیدنی های پروبیوتیکی قرار گرفته است که دوگیجان آنها را عرضه میکند
   </div>
+  {% assign scoby = site.products | where: "slug", "scoby-and-starter" | first %}
+  {% assign scoby-pack = site.products | where: "slug", "scoby-pack" | first %}
+  {% assign kimchi-sauce = site.products | where: "slug", "kimchi-sauce" | first %}
+
 <div class="products-container">
 
-    <a class="product-box" href="{{site.url}}/product/produce/scoby">
+    <a class="product-box" href="{{scoby.url}}">
       <div class="product-image">
-        <img src="/statics/img/products/scoby/ph-11134201-7rasc-m3k5v2c5r5tbe3.jpeg" alt="خرید قارچ کامبوچا ( کامبوجا )">
+        <img src="{{scoby.image}}" alt="{{scoby.title}}">
       </div>
-      <div class="product-title"> قارچ کامبوچا </div>
-      <div class=" product-title product-price">۱۴۹ هزار تومان</div>
+      <div class="product-title">{{scoby.name}}</div>
+      <div class=" product-title product-price">{{scoby.price}} تومان</div>
     </a>
 
-    <a class="product-box" href="{{site.url}}/product/produce/scoby-pack">
+    <a class="product-box" href="{{scoby-pack.url}}">
       <div class="product-image">
-        <img src="/statics/img/products/scoby-pack/lfIpUNtu9RUFpac60zhIRrE9S1i8tbce1V8i1KTLoVr4rVvGrr.jpg_800X800X70.jpg" alt="پک کامبوجا ساز">
+        <img src="{{scoby-pack.image}}" alt="{{scoby-pack.title}}">
       </div>
-      <div class="product-title">پک کامبوجا ساز</div>
-      <div class=" product-title product-price">۴۹۹ هزار تومان</div>
+      <div class="product-title">{{scoby-pack.name}}</div>
+      <div class=" product-title product-price">{{scoby-pack.price}} تومان</div>
     </a>
-    <a class="product-box" href="{{site.url}}/product/produce/kimchi-sauce">
+
+    <a class="product-box" href="{{kimchi-sauce.url}}">
       <div class="product-image">
-        <img src="/statics/img/products/kimchi/sauce/kimchi-sauce.jpg" alt="سس کیمچی">
+        <img src="{{kimchi-sauce.image}}" alt="{{kimchi-sauce.title}}">
       </div>
-      <div class="product-title">سس کیمچی</div>
-      <div class=" product-title product-price">۲۲۰ هزار تومان</div>
+      <div class="product-title">{{kimchi-sauce.name}}</div>
+      <div class=" product-title product-price">{{kimchi-sauce.price}} تومان</div>
     </a>
-    <!-- Add more product boxes as needed -->
   </div>
 </main>
 {% include footer.html %}
