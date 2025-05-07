@@ -1,0 +1,19 @@
+---
+canonical: "https://dugijan.ir/posts"
+title: "وبلاگ و مطالب آموزشی دوگیجان "
+---
+
+{% include header.html %}
+<main>
+    <section>
+        <ul>
+            {% for post in site.posts %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
+              </li>
+            {% endfor %}
+          </ul>
+          
+    </section>
+</main>
+{% include footer.html %}

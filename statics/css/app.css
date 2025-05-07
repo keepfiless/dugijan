@@ -727,6 +727,14 @@ a {
 .cart-items {
   margin: 20px 0;
 }
+.notification {
+  padding: 10px;
+  background-color:var(--dark-red);
+  color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin:5px 0px 5px 0px;
+}
 
 .cart-item {
   display: flex;
