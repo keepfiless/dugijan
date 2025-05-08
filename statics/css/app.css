@@ -996,3 +996,7 @@ body.modal-open {
 .has-text-weight-bold{
   font-weight: bold;
 }
+
+.price{
+  padding: 10px;
+}

@@ -5,26 +5,23 @@
         <div class="product-page-image">
             <img src="{{ page.image }}" alt="{{ page.name }}" id="product-img">
         </div>
-
         <!-- Product Details -->
         <div class="product-details">
             <h1 id="product-name">{{ page.name }}</h1>
             <ul>
                 {% for i in page.variants %}
-                  <li>{{ i }}</li>
+                <li>{{ i }}</li>
                 {% endfor %}
-              </ul>
-
+            </ul>
             <hr>
             <p class="price" id="product-price">قیمت :‌{{ page.price }} تومان</p>
             <p class="availability">{{page.product_status}}</p>
-            
             <!-- Add to Cart Button -->
             <button class="add-to-cart-btn" id="addToCartBtn">افزودن به سبد خرید</button>
-            <!-- Product Description -->
-            <div class="description">
-                {{ content }}
-            </div>
+        </div>
+        <!-- Product Description -->
+        <div class="description">
+            {{ content }}
         </div>
     </div>
 </section>
