@@ -111,6 +111,7 @@ body {
   color: var(--dark-gray);
   text-align: right;
   font-size: 20px !important;
+  line-height: 26px;
 }
 
 /* Header Styles - RTL */
@@ -727,6 +728,9 @@ a {
 .cart-items {
   margin: 20px 0;
 }
+.has-text-danger {
+  color:var(--dark-red); 
+}
 .notification {
   padding: 10px;
   background-color:var(--dark-red);
@@ -984,10 +988,10 @@ body.modal-open {
   color: var(--dark-red);
 }
 .box{
-  border-radius: 15px;
+  border-radius: 5px;
   padding: 10px;
-  border:1px solid gray;
-  margin:2px;
+  border:1px solid rgb(221, 221, 221);
+  margin:5px 0px 5px 0px;
 }
 .has-text-weight-bold{
   font-weight: bold;
