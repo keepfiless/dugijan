@@ -501,6 +501,9 @@ footer {
 .product-price {
   background-color: var(--primary-red);
   color: var(--light-gray);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* Large Desktop Styles */
