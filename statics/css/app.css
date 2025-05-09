@@ -1017,3 +1017,11 @@ body.modal-open {
 .price {
   padding: 10px;
 }
+
+.breadcrumbs {
+  color: #9e9ea7;
+}
+.breadcrumbs > a {
+  color: var(--light-red);
+  text-decoration: none;
+}
