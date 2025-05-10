@@ -1030,3 +1030,91 @@ body.modal-open {
   color: var(--light-red);
   text-decoration: none;
 }
+
+/* Randomly prefixed classes to avoid conflicts */
+.xb7f-section {
+  width: 100%;
+  padding: 60px 0;
+  background-color: #f9f9f9;
+}
+
+.xb7f-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.xb7f-media-col {
+  flex: 1 1 45%;
+  min-width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.xb7f-media {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.xb7f-media:hover {
+  transform: scale(1.02);
+}
+
+.xb7f-content-col {
+  flex: 1 1 45%;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.xb7f-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.xb7f-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.xb7f-button {
+  padding: 12px 24px;
+  background-color: #4a6bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.xb7f-button:hover {
+  background-color: #3a5bef;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .xb7f-container {
+      flex-direction: column;
+  }
+  
+  .xb7f-media-col, .xb7f-content-col {
+      flex: 1 1 100%;
+  }
+  
+  .xb7f-title {
+      font-size: 1.5rem;
+  }
+}
