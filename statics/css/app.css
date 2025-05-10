@@ -1034,7 +1034,7 @@ body.modal-open {
 /* Randomly prefixed classes to avoid conflicts */
 .xb7f-section {
   width: 100%;
-  padding: 60px 0;
+  padding: 10px 0;
   background-color: #f9f9f9;
 }
 
@@ -1047,7 +1047,7 @@ body.modal-open {
   gap: 30px;
 }
 
-.xb7f-media-col {
+.xb7f-left-col {
   flex: 1 1 45%;
   min-width: 300px;
   border-radius: 8px;
@@ -1067,7 +1067,7 @@ body.modal-open {
   transform: scale(1.02);
 }
 
-.xb7f-content-col {
+.xb7f-right-col {
   flex: 1 1 45%;
   min-width: 300px;
   display: flex;
@@ -1110,11 +1110,16 @@ body.modal-open {
       flex-direction: column;
   }
   
-  .xb7f-media-col, .xb7f-content-col {
+  .xb7f-left-col, .xb7f-right-col {
       flex: 1 1 100%;
   }
   
   .xb7f-title {
       font-size: 1.5rem;
   }
+  
+  /* Optionally swap column order on mobile */
+  /* .xb7f-container {
+      flex-direction: column-reverse;
+  } */
 }
