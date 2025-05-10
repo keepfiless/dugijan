@@ -1132,3 +1132,9 @@ body.modal-open {
       flex-direction: column-reverse;
   } */
 }
+.has-background-primary{
+  background-color: var(--dark-red);
+  color: var(--white);
+  text-decoration: none;
+  padding: 1px;
+}
