@@ -1045,7 +1045,7 @@ body.modal-open {
   padding: 0px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 10px;
   border-radius: 0;
 }
 
