@@ -1091,7 +1091,7 @@ body.modal-open {
 
 .xb7f-button {
   padding: 12px 24px;
-  background-color: #4a6bff;
+  background-color: var(--dark-red);
   color: white;
   border: none;
   border-radius: 4px;
@@ -1102,7 +1102,8 @@ body.modal-open {
 }
 
 .xb7f-button:hover {
-  background-color: #3a5bef;
+  background-color: var(--light-red);
+  color: var(--dark-gray);
 }
 
 /* Responsive adjustments */
