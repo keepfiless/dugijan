@@ -1037,7 +1037,7 @@ body.modal-open {
   padding: 5px;
   border-radius: 12px;
   background-color: #f9f9f9;
-  border: 1px solid gray;
+  border: 1px solid rgb(244, 244, 244);
 }
 
 .xb7f-container {
