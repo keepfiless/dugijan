@@ -179,7 +179,7 @@ nav a:hover {
 /* Main Content - RTL */
 main {
   flex: 1;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -1034,23 +1034,24 @@ body.modal-open {
 /* Randomly prefixed classes to avoid conflicts */
 .xb7f-section {
   width: 100%;
-  padding: 10px 0;
+  padding: 0px;
+  border-radius: 0;
   background-color: #f9f9f9;
 }
 
 .xb7f-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  border-radius: 0;
 }
 
 .xb7f-left-col {
   flex: 1 1 45%;
   min-width: 300px;
-  border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
