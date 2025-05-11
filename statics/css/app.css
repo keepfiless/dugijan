@@ -1147,3 +1147,7 @@ body.modal-open {
 .has-text-centered{
   text-align: center;
 }
+.is-light{
+  background-color: var(--light-gray);
+  color:var(--dark-gray);
+}
