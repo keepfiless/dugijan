@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if page.meta_description %}
+  <meta name="description" content="{{ page.meta_description }}">
+  {% endif %}
   <link rel="canonical" href="{{ page.canonical }}" />
+
   <!-- favicon load -->
   <!-- Basic favicons -->
   <link rel="icon" href="{{ '/statics/img/favicon/favicon.ico' | relative_url }}" type="image/x-icon">
@@ -20,7 +24,7 @@
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="msapplication-config" content="{{ '/statics/img/favicon/browserconfig.xml' | relative_url }}">
   <!-- end favicon loading -->
-  <title>{% if page.title %}{{ page.title }}{% else %} دوگیجان {% endif %}</title>
+  <title>{% if page.title %}{{ page.title }} | دوگیجان {% else %} دوگیجان {% endif %}</title>
 
   <style>
     body {
