@@ -426,6 +426,7 @@ footer {
   overflow: hidden;
   min-height: 43px;
   word-break: break-word;
+  padding: 2px;
 }
 
 /* Tablet Styles */
