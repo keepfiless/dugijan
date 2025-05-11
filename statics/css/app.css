@@ -1239,3 +1239,6 @@ body.modal-open {
   max-width: 100%; /* Ensures it doesn't overflow container */
   display: block;
 }
+.has-text-no-decoration{
+  text-decoration:none;
+}

@@ -139,7 +139,8 @@ meta_description : دوگیجان اولین تولیدی محصولات پرو�
     <ul>
       {% for product in site.products %}
       <li>
-        <a href="{{ product.url }}">{{ product.name }}</a> - {{ product.price }} تومان
+        {{ forloop.index }} -
+        <a class="has-text-no-decoration" href="{{ product.url }}">{{ product.name }}</a> - {{ product.price }} تومان
       </li>
       {% endfor %}
     </ul>
