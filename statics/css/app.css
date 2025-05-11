@@ -1173,3 +1173,54 @@ body.modal-open {
       margin: 2rem 0; /* More spacing on mobile */
   }
 }
+/* Feature section styles */
+.feature-container-xz {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 20px;
+}
+
+.feature-box-yb {
+  flex: 1;
+  min-width: calc(50% - 40px);
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-box-yb:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon-kl {
+  color: #28a745;
+  margin-bottom: 20px; /* Increased from 15px */
+  display: block; /* Ensures proper spacing */
+  font-size: 2.5rem !important; /* Roughly equivalent to fs-1 */
+}
+
+.feature-title-pq {
+  font-size: 1.25rem;
+  margin-bottom: 12px; /* Slightly increased */
+  color: #333;
+}
+
+.feature-text-mn {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Medium screens and up (4 columns) */
+@media (min-width: 768px) {
+  .feature-box-yb {
+    min-width: calc(25% - 40px);
+  }
+}
