@@ -1151,3 +1151,7 @@ body.modal-open {
   background-color: var(--light-gray);
   color:var(--dark-gray);
 }
+.responsive-img{
+  width: 100%;
+  height: auto;
+}
