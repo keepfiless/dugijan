@@ -1223,3 +1223,19 @@ body.modal-open {
     min-width: calc(25% - 40px);
   }
 }
+
+.video-container-4xhg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2d2d2d; /* Border color */
+  max-width: 100%; /* Ensure it's responsive */
+  margin: 0 auto; /* Center the container */
+}
+
+.video-4xhg {
+  width: auto;
+  max-height: 80vh; /* Limits the height to 80% of viewport height */
+  max-width: 100%; /* Ensures it doesn't overflow container */
+  display: block;
+}
