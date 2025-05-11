@@ -1,5 +1,7 @@
 url: "https://dugijan.ir"
-mobile : "09146853523" 
+mobile : "09146853523"
+email : "info@dugijan.ir"
+address : آذربایجانشرقی - شهر تبریز - مرکز دوگیجان
 
 permalink: /:year/:month/:day/:title/
 
