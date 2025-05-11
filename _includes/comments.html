@@ -1,0 +1,34 @@
+{% if page.comments %}
+{% assign product_comments = site.data.comments[page.slug] %}
+<main>
+    <section>
+        <div class="comments">
+            <div class="comments-section">
+                <div class="notification has-text-centered"> <i class="bi bi-person-bounding-box"></i> فقط خریداران این
+                    محصول اجازه ی ثبت نظر دارند</div>
+                <h3>تجربه های خریداران </h3>
+                {% if product_comments %}
+                <div class="comments-list">
+                    {% for comment in product_comments %}
+                    <div class="comment">
+                        <div class="comment-header">
+                            <strong><i class="bi bi-person-circle "></i>  {{ comment.username }}</strong>
+                            <span>⭐⭐⭐⭐⭐</span>
+                        </div>
+                        <div class="comment-body">
+                            {{ comment.text | markdownify }}
+                            <small><span class="comment-date">{{ comment.date | date: "%B %d, %Y" }}</span></small>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <p>هنوز هیچ تجربه ی خریدی از سمت خریداران به این محصول ثبت نشده است</p>
+                {% endif %}
+            </div>
+            {% endif %}
+
+
+        </div>
+    </section>
+</main>
