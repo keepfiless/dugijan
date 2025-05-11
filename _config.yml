@@ -13,3 +13,6 @@ collections:
     
 plugins:
   - jekyll-redirect-from
+
+redirects:
+  "/404.html": "/404"  # Redirect 404.html → /404
