@@ -3,36 +3,36 @@
 	font-family: IRANYekanX;
 	font-style: normal;
 	font-weight: 300;
-	src: url('/statics/fonts/IRANYekanX-Light.woff') format('woff'),   
-	url('/statics/fonts/IRANYekanX-Light.woff2') format('woff2');		 
+	src: url('/statics/fonts/IRANYekanXFaNum-Light.woff') format('woff'),   
+	url('/statics/fonts/IRANYekanXFaNum-Light.woff2') format('woff2');		 
 }
 @font-face {
 	font-family: IRANYekanX;
 	font-style: normal;
 	font-weight: 900;
-	src: url('/statics/fonts/IRANYekanX-Black.woff') format('woff'),   
-	url('/statics/fonts/IRANYekanX-Black.woff2') format('woff2');		 
+	src: url('/statics/fonts/IRANYekanXFaNum-Black.woff') format('woff'),   
+	url('/statics/fonts/IRANYekanXFaNum-Black.woff2') format('woff2');		 
 }
 @font-face {
 	font-family: IRANYekanX;
 	font-style: normal;
 	font-weight: 950;
-	src: url('/statics/fonts/IRANYekanX-ExtraBlack.woff') format('woff'),   
-	url('/statics/fonts/IRANYekanX-ExtraBlack.woff2') format('woff2');		 
+	src: url('/statics/fonts/IRANYekanXFaNum-ExtraBlack.woff') format('woff'),   
+	url('/statics/fonts/IRANYekanXFaNum-ExtraBlack.woff2') format('woff2');		 
 }
 @font-face {
 	font-family: IRANYekanX;
 	font-style: normal;
 	font-weight: bold;
-	src: url('/statics/fonts/IRANYekanX-Bold.woff') format('woff'),   
-	url('/statics/fonts/IRANYekanX-Bold.woff2') format('woff2');	 
+	src: url('/statics/fonts/IRANYekanXFaNum-Bold.woff') format('woff'),   
+	url('/statics/fonts/IRANYekanXFaNum-Bold.woff2') format('woff2');	 
 }
 @font-face {
 	font-family: IRANYekanX;
 	font-style: normal;
 	font-weight: normal;
-	src: url('/statics/fonts/IRANYekanX-Regular.woff') format('woff'),   
-	url('/statics/fonts/IRANYekanX-Regular.woff2') format('woff2');	
+	src: url('/statics/fonts/IRANYekanXFaNum-Regular.woff') format('woff'),   
+	url('/statics/fonts/IRANYekanXFaNum-Regular.woff2') format('woff2');	
 }
 /* end load font */
 
