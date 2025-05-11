@@ -1,28 +1,35 @@
 ---
 canonical: "https://dugijan.ir/category/produce"
-title: "مولد های تولید محصولات پروبیوتیکی"
+title: "دسته بندی کامبوچا"
 ---
 
 {% include header.html %}
 <main>
-    <div class="category-content">
-        <h1> فروشگاه کامبوچا </h1>
-    </div>
-    {% assign kombucha-items = site.products | where_exp: "item", "item.path contains '_products/kombucha/'" %}
+    <section>
+        <div class="breadcrumbs">
+            <a href="{{site.url}}/products">فروشگاه</a>/
+            <span>{{page.title}}</span>
+        </div>
+        <div class="category-content">
+            <h1> فروشگاه کامبوچا </h1>
+        </div>
 
-    <div class="products-container">
-        {% for product in kombucha-items %}
+        {% assign kombucha-items = site.products | where_exp: "item", "item.path contains '_products/kombucha/'" %}
 
-        <a class="product-box" href="{{product.url}}">
-            <div class="product-image">
-                <img src="{{product.image}}" alt="{{product.title}}">
-            </div>
-            <div class="product-title">{{product.name}}</div>
-            <div class=" product-title product-price">{{product.price}} تومان</div>
-        </a>
+        <div class="products-container">
+            {% for product in kombucha-items %}
 
-        {% endfor %}
+            <a class="product-box" href="{{product.url}}">
+                <div class="product-image">
+                    <img src="{{product.image}}" alt="{{product.title}}">
+                </div>
+                <div class="product-title">{{product.name}}</div>
+                <div class=" product-title product-price">{{product.price}} تومان</div>
+            </a>
 
-    </div>
+            {% endfor %}
+
+        </div>
+    </section>
 </main>
 {% include footer.html %}

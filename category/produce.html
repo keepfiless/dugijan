@@ -1,42 +1,49 @@
 ---
 canonical: "https://dugijan.ir/category/produce"
-title: "مولد های تولید محصولات پروبیوتیکی"
+title: "دسته بندی مولدهای پروبیوتیکی"
 ---
 
 {% include header.html %}
 <main>
-  <div class="">
-    در این بخش مولد ها یعنی مواد لازم برای تولید انواع خوراکی ها و نوشیدنی های پروبیوتیکی قرار گرفته است که دوگیجان آنها را عرضه میکند
+  <section>
+    <div class="breadcrumbs">
+      <a href="{{site.url}}/products">فروشگاه</a>/
+      <span>{{page.title}}</span>
   </div>
-  {% assign scoby = site.products | where: "slug", "scoby-and-starter" | first %}
-  {% assign scoby-pack = site.products | where: "slug", "scoby-pack" | first %}
-  {% assign kimchi-sauce = site.products | where: "slug", "kimchi-sauce" | first %}
+    <div class="">
+      در این بخش مولد ها یعنی مواد لازم برای تولید انواع خوراکی ها و نوشیدنی های پروبیوتیکی قرار گرفته است که دوگیجان
+      آنها را عرضه میکند
+    </div>
+    {% assign scoby = site.products | where: "slug", "scoby-and-starter" | first %}
+    {% assign scoby-pack = site.products | where: "slug", "scoby-pack" | first %}
+    {% assign kimchi-sauce = site.products | where: "slug", "kimchi-sauce" | first %}
 
-<div class="products-container">
+    <div class="products-container">
 
-    <a class="product-box" href="{{scoby.url}}">
-      <div class="product-image">
-        <img src="{{scoby.image}}" alt="{{scoby.title}}">
-      </div>
-      <div class="product-title">{{scoby.name}}</div>
-      <div class=" product-title product-price">{{scoby.price}} تومان</div>
-    </a>
+      <a class="product-box" href="{{scoby.url}}">
+        <div class="product-image">
+          <img src="{{scoby.image}}" alt="{{scoby.title}}">
+        </div>
+        <div class="product-title">{{scoby.name}}</div>
+        <div class=" product-title product-price">{{scoby.price}} تومان</div>
+      </a>
 
-    <a class="product-box" href="{{scoby-pack.url}}">
-      <div class="product-image">
-        <img src="{{scoby-pack.image}}" alt="{{scoby-pack.title}}">
-      </div>
-      <div class="product-title">{{scoby-pack.name}}</div>
-      <div class=" product-title product-price">{{scoby-pack.price}} تومان</div>
-    </a>
+      <a class="product-box" href="{{scoby-pack.url}}">
+        <div class="product-image">
+          <img src="{{scoby-pack.image}}" alt="{{scoby-pack.title}}">
+        </div>
+        <div class="product-title">{{scoby-pack.name}}</div>
+        <div class=" product-title product-price">{{scoby-pack.price}} تومان</div>
+      </a>
 
-    <a class="product-box" href="{{kimchi-sauce.url}}">
-      <div class="product-image">
-        <img src="{{kimchi-sauce.image}}" alt="{{kimchi-sauce.title}}">
-      </div>
-      <div class="product-title">{{kimchi-sauce.name}}</div>
-      <div class=" product-title product-price">{{kimchi-sauce.price}} تومان</div>
-    </a>
-  </div>
+      <a class="product-box" href="{{kimchi-sauce.url}}">
+        <div class="product-image">
+          <img src="{{kimchi-sauce.image}}" alt="{{kimchi-sauce.title}}">
+        </div>
+        <div class="product-title">{{kimchi-sauce.name}}</div>
+        <div class=" product-title product-price">{{kimchi-sauce.price}} تومان</div>
+      </a>
+    </div>
+  </section>
 </main>
 {% include footer.html %}

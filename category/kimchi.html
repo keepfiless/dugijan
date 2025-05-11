@@ -1,10 +1,15 @@
 ---
 canonical: "https://dugijan.ir/category/kimchi"
-title: "خرید کیمچی | دوگیجان"
+title: "دسته بندی کیمچی"
 ---
 
 {% include header.html %}
 <main>
+    <section>
+    <div class="breadcrumbs">
+        <a href="{{site.url}}/products">فروشگاه</a>/
+        <span>{{page.title}}</span>
+    </div>
     <div class="category-content">
         <h1>فروشگاه  کیمچی</h1>
     </div>
@@ -21,9 +26,8 @@ title: "خرید کیمچی | دوگیجان"
             <div class="product-title">{{product.name}}</div>
             <div class=" product-title product-price">{{product.price}} تومان</div>
         </a>
-
         {% endfor %}
-
     </div>
+</section>
 </main>
 {% include footer.html %}
