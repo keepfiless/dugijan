@@ -5,17 +5,17 @@ title: "وبلاگ و مطالب آموزشی دوگیجان "
 
 {% include header.html %}
 <main>
-    <section>
-        <h1>آخرین مطالب وب سایت</h1>
-        <ul>
-            {% for post in site.posts %}
-              <li>
-                {{ forloop.index }} - 
-                <a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
-              </li>
-            {% endfor %}
-          </ul>
-          
-    </section>
+  <section>
+    <h1>آخرین مطالب وب سایت</h1>
+    <ul>
+      {% for post in site.posts %}
+      <li>
+        {{ forloop.index }} -
+        <a href="{{ post.url | remove: '.html' }}/">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}
+      </li>
+      {% endfor %}
+    </ul>
+
+  </section>
 </main>
 {% include footer.html %}

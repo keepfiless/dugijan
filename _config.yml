@@ -2,6 +2,8 @@
 url: "https://dugijan.ir"       # For production
 baseurl: ""                        # Leave empty or use "/repo" for project sites
 
+permalink: /:year/:month/:day/:title/
+
 collections:
   products:
     output: true
