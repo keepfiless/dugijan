@@ -1181,7 +1181,7 @@ body.modal-open {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  gap: 20px;
+  gap: 5px;
 }
 
 .feature-box-yb {
