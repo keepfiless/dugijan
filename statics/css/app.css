@@ -1155,3 +1155,21 @@ body.modal-open {
   width: 100%;
   height: auto;
 }
+.banner-img{
+  width: 100%;
+  height: auto;
+  max-width: 600px;
+}
+.divider {
+  border-top: 1px solid #ccc;
+  margin: 1.5rem 0;
+  width: 100%;
+}
+
+/* Thicker line on small screens */
+@media (max-width: 768px) {
+  .divider {
+      border-top-width: 2px;
+      margin: 2rem 0; /* More spacing on mobile */
+  }
+}
