@@ -1,6 +1,5 @@
-# _config.yml
-url: "https://dugijan.ir"       # For production
-baseurl: ""                        # Leave empty or use "/repo" for project sites
+url: "https://dugijan.ir"
+mobile : "09146853523"
 
 permalink: /:year/:month/:day/:title/
 
