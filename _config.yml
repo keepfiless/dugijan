@@ -8,7 +8,7 @@ collections:
     output: true
     permalink: /products/:slug/
   posts:
-    permalink: /:year/:month/:day/:title/  # No .html for posts
+    permalink: /:title/  # No .html for posts
     
 plugins:
   - jekyll-redirect-from
