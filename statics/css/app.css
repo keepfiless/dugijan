@@ -1195,3 +1195,22 @@ body.modal-open {
 .has-text-no-decoration{
   text-decoration:none;
 }
+
+.post-content {
+  overflow: hidden;
+}
+.post-image {
+  float: left;
+  max-width: 400px; /* Set the image size */
+  margin: 0 20px 20px 0; /* Space to the right and bottom of image */
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.post-text {
+  /* No special styles needed here; text will wrap around floated image */
+}
