@@ -3,8 +3,6 @@ mobile : "09146853523"
 email : "info@dugijan.ir"
 address : آذربایجانشرقی - شهر تبریز - مرکز دوگیجان
 
-trailing_slash: true
-
 collections:
   products:
     output: true
