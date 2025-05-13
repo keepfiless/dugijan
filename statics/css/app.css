@@ -982,6 +982,7 @@ body.modal-open {
 
 .breadcrumbs {
   color: #9e9ea7;
+  font-size: 14px;
 }
 
 .breadcrumbs>a {
