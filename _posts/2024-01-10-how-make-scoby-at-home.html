@@ -66,6 +66,19 @@ image : /statics/img/post/how-make-kombucha/طرز تهیه کامبوچا.jpg
         تهیه کنید</p>
 
     <div class="products-container">
+        {% assign scoby1 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby.html'" %}
+        {% assign scoby2 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby-pack.html'" %}
+        {% assign featured_products = scoby1 | concat: scoby2 %}
+
+        {% for product in featured_products limit:2 %}
+        <a target="_blank" class="product-box" href="{{ product.url }}">
+            <div class="product-image">
+                <img src="{{ product.image }}" alt="{{ product.title }}">
+            </div>
+            <div class="product-title">{{ product.name }}</div>
+            <div class="btn">خرید</div>
+        </a>
+        {% endfor %}
 
     </div>
 </div>
