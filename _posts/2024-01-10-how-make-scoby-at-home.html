@@ -65,7 +65,6 @@ image : /statics/img/post/how-make-kombucha/طرز تهیه کامبوچا.jpg
 
     <div class="products-container">
         {% assign featured_products = site.products | where_exp: "product", "product.path contains 'kombucha/scoby.html' or product.path contains 'kombucha/scoby-pack.html'" %}
-
         {% for product in featured_products limit:2 %}
         <a target="_blank" class="product-box" href="{{product.url}}">
             <div class="product-image">
