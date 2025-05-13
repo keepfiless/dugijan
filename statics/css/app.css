@@ -1316,3 +1316,6 @@ ul.custom-list li::before {
   font-size: 20px;
   line-height: 1;
 }
+a {
+  text-decoration: none;
+}
