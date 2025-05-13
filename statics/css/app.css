@@ -1132,6 +1132,11 @@ body.modal-open {
   height: auto;
   max-width: 600px;
 }
+.content-img {
+  height: auto;
+  max-height: 400px;
+  max-width: 100%;
+}
 
 .divider {
   border-top: 1px solid #ccc;
