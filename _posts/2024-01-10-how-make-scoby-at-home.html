@@ -60,28 +60,6 @@ image : /statics/img/post/how-make-kombucha/طرز تهیه کامبوچا.jpg
         <div class="cell">یک عدد</div>
     </div>
 </div>
-<div>
-    <h3>خرید قارچ کامبوچا و استارتر</h3>
-    <p>برای تهیه شما نیاز به یک قارچ مادر و مقداری مایع استارتر دارید هم اکنون میتونید این دو ماده کلیدی رو از دوگیجان
-        تهیه کنید</p>
-
-    <div class="products-container">
-        {% assign scoby1 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby.html'" %}
-        {% assign scoby2 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby-pack.html'" %}
-        {% assign featured_products = scoby1 | concat: scoby2 %}
-
-        {% for product in featured_products limit:2 %}
-        <a target="_blank" class="product-box" href="{{ product.url }}">
-            <div class="product-image">
-                <img src="{{ product.image }}" alt="{{ product.title }}">
-            </div>
-            <div class="product-title">{{ product.name }}</div>
-            <div class="btn">خرید</div>
-        </a>
-        {% endfor %}
-
-    </div>
-</div>
 <h2>نگاهی سریع به طرز تهیه </h2>
 <p>
     پایه ی نوشیدنی کامبوچا چای هست تفاوتی نداره چای سبز باشه یا چای سیاه یا چای قرمز ،‌ولی اگر برای اولین بار هست که
@@ -256,3 +234,25 @@ image : /statics/img/post/how-make-kombucha/طرز تهیه کامبوچا.jpg
     و از آن مصرف میکنید میتواند استارتر باشد و مقداری از آن را برای تولید بعدی نگه دارید
     به این شکل شما به تعداد نامحدودی میتوانید قارچ کامبوچا و مایع نوشیدنی کامبوچا بسازید
 </p>
+<div>
+    <h3>خرید قارچ کامبوچا و استارتر</h3>
+    <p>برای تهیه شما نیاز به یک قارچ مادر و مقداری مایع استارتر دارید هم اکنون میتونید این دو ماده کلیدی رو از دوگیجان
+        تهیه کنید</p>
+
+    <div class="products-container">
+        {% assign scoby1 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby.html'" %}
+        {% assign scoby2 = site.products | where_exp: "product", "product.path contains 'kombucha/scoby-pack.html'" %}
+        {% assign featured_products = scoby1 | concat: scoby2 %}
+
+        {% for product in featured_products limit:2 %}
+        <a target="_blank" class="product-box" href="{{ product.url }}">
+            <div class="product-image">
+                <img src="{{ product.image }}" alt="{{ product.title }}">
+            </div>
+            <div class="product-title">{{ product.name }}</div>
+            <div class="btn">خرید</div>
+        </a>
+        {% endfor %}
+
+    </div>
+</div>
