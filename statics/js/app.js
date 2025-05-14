@@ -275,7 +275,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const tocLink = document.createElement('a');
     tocLink.href = `#${id}`;
-    tocLink.textContent = heading.textContent;
+    tocLink.textContent = ' + '+ heading.textContent;
     
     // Add click handler with navbar offset
     tocLink.addEventListener('click', (e) => {
