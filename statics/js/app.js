@@ -224,3 +224,127 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // end shamsi date -------------------------
+
+// start create table of contents 
+document.addEventListener('DOMContentLoaded', function() {
+  const postContent = document.querySelector('.post-content');
+  if (!postContent) return;
+
+  // Select only h2 and h3 inside post-content
+  const headings = postContent.querySelectorAll('h2, h3');
+  if (headings.length === 0) return;
+
+  // Create TOC container
+  const toc = document.createElement('div');
+  toc.className = 'toc-container';
+
+  // Create TOC title
+  const tocTitle = document.createElement('h2');
+  tocTitle.className = 'toc-title';
+  tocTitle.textContent = 'لیست موضوعات ';
+  toc.appendChild(tocTitle);
+
+  // Create UL
+  const tocList = document.createElement('ul');
+  tocList.className = 'toc-ul';
+
+  // Track used IDs to prevent duplicates
+  const usedIds = {};
+
+  headings.forEach(heading => {
+    // Generate unique ID
+    let id = heading.textContent
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-');
+    
+    // Handle duplicate IDs
+    if (usedIds[id]) {
+      let counter = 1;
+      while (usedIds[`${id}-${counter}`]) {
+        counter++;
+      }
+      id = `${id}-${counter}`;
+    }
+    usedIds[id] = true;
+    heading.id = id;
+
+    // Create TOC item
+    const tocItem = document.createElement('li');
+    tocItem.className = `toc-li toc-${heading.tagName.toLowerCase()}`;
+    
+    const tocLink = document.createElement('a');
+    tocLink.href = `#${id}`;
+    tocLink.textContent = heading.textContent;
+    
+    // Add click handler with navbar offset
+    tocLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(id);
+      if (target) {
+        window.scrollTo({
+          top: target.offsetTop - 110, // Adjust to your navbar height
+          behavior: 'smooth'
+        });
+        // Update URL without adding to history
+        window.history.replaceState(null, null, `#${id}`);
+      }
+    });
+    
+    tocItem.appendChild(tocLink);
+    tocList.appendChild(tocItem);
+  });
+
+  toc.appendChild(tocList);
+  postContent.insertBefore(toc, postContent.firstChild);
+});
+// end table of contents 
+
+// start back to top button
+document.addEventListener('DOMContentLoaded', function() {
+  const backToTopButton = document.getElementById('back-to-top');
+  
+  // Modern scroll detection
+  function toggleBackToTop() {
+    if (window.pageYOffset > 300 || 
+        document.documentElement.scrollTop > 300 || 
+        document.body.scrollTop > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  }
+  
+  // Cross-browser scroll events
+  window.addEventListener('scroll', toggleBackToTop);
+  window.addEventListener('touchmove', toggleBackToTop);
+  
+  // Enhanced scroll-to-top function
+  function scrollToTop() {
+    try {
+      // Try modern smooth scrolling first
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } catch (e) {
+      // Fallback for older browsers
+      const scrollStep = -window.scrollY / 15;
+      const scrollInterval = setInterval(() => {
+        if (window.scrollY !== 0) {
+          window.scrollBy(0, scrollStep);
+        } else {
+          clearInterval(scrollInterval);
+        }
+      }, 15);
+    }
+  }
+  
+  // Click/touch handler
+  backToTopButton.addEventListener('click', scrollToTop);
+  backToTopButton.addEventListener('touchend', function(e) {
+    e.preventDefault(); // Prevent ghost clicks on mobile
+    scrollToTop();
+  });
+});
+// end back to top button

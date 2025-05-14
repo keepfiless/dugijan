@@ -58,6 +58,12 @@
   font-family: IRANYekanX, sans-serif;
 }
 
+html {
+
+  scroll-behavior: smooth;
+
+}
+
 body {
   font-family: IRANYekanX, sans-serif;
   display: flex;
@@ -1132,6 +1138,7 @@ body.modal-open {
   height: auto;
   max-width: 600px;
 }
+
 .content-img {
   height: auto;
   max-height: 400px;
@@ -1263,10 +1270,12 @@ body.modal-open {
   margin: 5px;
   padding: 5px;
 }
-.table-header{
+
+.table-header {
   color: var(--dark-red);
   font-weight: bolder;
 }
+
 .row {
   display: flex;
   justify-content: space-between;
@@ -1322,9 +1331,100 @@ ul.custom-list li::before {
   font-size: 20px;
   line-height: 1;
 }
+
 a {
   text-decoration: none;
 }
-h1 , h2 , h3{
+
+h1,
+h2,
+h3 {
   margin-top: 10px;
+}
+
+.toc-container {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.toc-title {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.toc-ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0.5rem 0 0 0;
+  font-size: 1rem;
+  line-height: 1rem;
+
+}
+
+.toc-li {
+  padding: 0.25rem 0;
+
+}
+
+.toc-li a {
+  text-decoration: none;
+  color: var(--dark-gray);
+}
+
+.toc-li a:hover {
+  text-decoration: underline;
+}
+
+.toc-h3 {
+  padding-left: 1rem;
+}
+
+.back-to-top {
+  position: fixed;
+  vertical-align: middle;
+  bottom: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--dark-red);
+  border: 1px solid rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 9999;
+  /* Ensure it's above other elements */
+  -webkit-tap-highlight-color: transparent;
+  /* Remove mobile tap highlight */
+}
+
+.back-to-top i.bi {
+  font-size: 150%;
+  /* Relative to parent */
+}
+
+/* Larger touch target for mobile */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 35px;
+    height: 35px;
+    bottom: 15px;
+    left: 15px;
+  }
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover,
+.back-to-top:active {
+  /* Added :active for mobile */
+  transform: translateY(-3px);
+
 }
