@@ -1,0 +1,22 @@
+---
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  {% for post in site.posts %}
+    {% if post.video %}
+    <url>
+      <loc>{{ site.url }}{{ post.url }}</loc>
+      <video:video>
+        <video:thumbnail_loc>{{ site.url }}{{ post.video.thumbnail }}</video:thumbnail_loc>
+        <video:title>{{ post.video.title | xml_escape }}</video:title>
+        <video:description>{{ post.video.description | truncate: 2000 | xml_escape }}</video:description>
+        <video:content_loc>{{ site.url }}{{ post.video.url }}</video:content_loc>
+        <video:duration>{{ post.video.duration }}</video:duration>
+        <video:publication_date>{{ post.date | date: "%Y-%m-%d" }}</video:publication_date>
+      </video:video>
+    </url>
+    {% endif %}
+  {% endfor %}
+</urlset>
