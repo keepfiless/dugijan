@@ -2,6 +2,7 @@ url: "https://dugijan.ir"
 mobile : "09146853523"
 email : "info@dugijan.ir"
 address : آذربایجانشرقی - شهر تبریز - مرکز دوگیجان
+permalink: pretty  # This removes .html from URLs
 
 collections:
   products:
