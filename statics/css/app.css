@@ -1134,15 +1134,32 @@ body.modal-open {
 }
 
 .banner-img {
-  width: 100%;
+  display: block;
+  max-height: 400px;
   height: auto;
-  max-width: 600px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .content-img {
+  display: block;
+  max-height: 400px;
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.post-text img {
   height: auto;
   max-height: 400px;
+  width: auto;
   max-width: 100%;
+  display: block;
+  padding: 15px;
+  margin: 0 auto;
+  border-radius: 15px !important;
 }
 
 .divider {
