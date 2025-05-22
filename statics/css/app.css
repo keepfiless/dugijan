@@ -966,11 +966,6 @@ body.modal-open {
   z-index: 2;
 }
 
-/* color helpers  */
-.has-text-primary {
-  color: var(--dark-red);
-}
-
 .box {
   border-radius: 5px;
   padding: 10px;
@@ -978,9 +973,7 @@ body.modal-open {
   margin: 5px 0px 5px 0px;
 }
 
-.has-text-weight-bold {
-  font-weight: bold;
-}
+
 
 .price {
   padding: 10px;
@@ -1444,3 +1437,14 @@ h3 {
   transform: translateY(-3px);
 
 }
+/* start text ui helpers */
+.has-text-primary {
+  color: var(--dark-red);
+}
+.has-text-green{
+  color:#28a745;
+}
+.has-text-weight-bold {
+  font-weight: bold;
+}
+/* end text ui helpers */
