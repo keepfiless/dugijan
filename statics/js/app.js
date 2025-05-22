@@ -227,10 +227,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // start create table of contents 
 document.addEventListener('DOMContentLoaded', function() {
-  const postContent = document.querySelector('.post-content');
-  if (!postContent) return;
+  const postText = document.querySelector('.post-text');
+  if (!postText) return;
 
-  // Select only h2 and h3 inside post-content
+  // Select only h2 and h3 inside post-content (or post-text if that's where your content is)
+  const postContent = document.querySelector('.post-content') || postText;
   const headings = postContent.querySelectorAll('h2, h3');
   if (headings.length === 0) return;
 
@@ -296,7 +297,9 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   toc.appendChild(tocList);
-  postContent.insertBefore(toc, postContent.firstChild);
+  
+  // Insert the TOC at the top of the post-text div
+  postText.insertBefore(toc, postText.firstChild);
 });
 // end table of contents 
 
