@@ -1268,10 +1268,6 @@ body.modal-open {
   display: block;
 }
 
-.post-text {
-  /* No special styles needed here; text will wrap around floated image */
-}
-
 .table {
   display: flex;
   flex-direction: column;
