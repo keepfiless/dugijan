@@ -513,6 +513,24 @@ footer {
   border: none;
   cursor: pointer;
 }
+.btn-normal {
+  display: inline-flex; /* or 'flex' with 'width: fit-content' */
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px; /* slightly smaller padding for small button */
+  background: var(--dark-red);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: IRANYekanX, sans-serif;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: fit-content; /* this makes it only as wide as its content */
+  /* Alternatively, you could use: display: inline-flex; */
+}
 
 /* Hover Effect */
 .btn:hover {
