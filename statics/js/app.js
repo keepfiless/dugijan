@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Create TOC title
   const tocTitle = document.createElement('h2');
   tocTitle.className = 'toc-title';
-  tocTitle.textContent = 'لیست موضوعات ';
+  tocTitle.textContent = 'لیست موضوعات این صفحه ';
   toc.appendChild(tocTitle);
 
   // Create UL
@@ -276,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const tocLink = document.createElement('a');
     tocLink.href = `#${id}`;
-    tocLink.textContent = ' + '+ heading.textContent;
+    tocLink.textContent = ' ✅ '+ heading.textContent;
     
     // Add click handler with navbar offset
     tocLink.addEventListener('click', (e) => {
