@@ -634,8 +634,8 @@ a {
 /* Product Page Styles */
 .product-container {
   display: flex;
-  gap: 30px;
-  margin: 20px;
+  gap: 10px;
+  margin: 10px;
   flex-wrap: wrap;
 }
 
@@ -1462,3 +1462,85 @@ h3 {
   font-weight: bold;
 }
 /* end text ui helpers */
+
+/* start product variants  */
+/* Product Variants List - Improved Flex Layout */
+.product-variants {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-variants__item {
+  position: relative;
+  padding: 10px 16px;
+  background-color: #f8f8f8;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  flex: 1 0 auto; /* Key change - allows items to grow */
+  min-width: fit-content; /* Prevents items from becoming too narrow */
+  text-align: center;
+  white-space: nowrap; /* Prevents text wrapping within items */
+}
+
+/* Selected state */
+.product-variants__item--selected {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  font-weight: 500;
+  flex-grow: 1.2; /* Selected item can grow slightly more */
+}
+
+/* Hover effect */
+.product-variants__item:hover:not(.product-variants__item--selected) {
+  background-color: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* Click animation */
+.product-variants__item:active {
+  animation: variantClick 0.3s ease;
+}
+
+@keyframes variantClick {
+  0% { transform: scale(0.96); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+/* Disabled state */
+.product-variants__item--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  position: relative;
+  flex-grow: 1; /* Disabled items also stretch */
+}
+
+.product-variants__item--disabled::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #999;
+  transform: translateY(-50%);
+}
+
+/* Optional: Add this if you want all items to have equal width */
+/*
+.product-variants__item {
+  flex: 1;
+  min-width: 0; /* Needed for text truncation 
+}
+*/
+/* end product variants list */

@@ -14,12 +14,12 @@
         <!-- Product Details -->
         <div class="product-details">
             <h1 id="product-name">{{ page.name }}</h1>
-            <ul>
+            <ul class="product-variants">
                 {% for i in page.variants %}
-                <li>{{ i }}</li>
+                <li class="product-variants__item">{{ i }}</li>
                 {% endfor %}
             </ul>
-            <hr>
+            <div class="divider"></div>
             <p class="price" id="product-price">قیمت :‌{{ page.price }} تومان</p>
             <p class="availability">{{page.product_status}}</p>
             <!-- Add to Cart Button -->
