@@ -471,8 +471,12 @@ footer {
   background-color: var(--primary-red);
   color: var(--light-gray);
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  gap: 0px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-end;
 }
 
 /* Large Desktop Styles */
@@ -513,11 +517,14 @@ footer {
   border: none;
   cursor: pointer;
 }
+
 .btn-normal {
-  display: inline-flex; /* or 'flex' with 'width: fit-content' */
+  display: inline-flex;
+  /* or 'flex' with 'width: fit-content' */
   align-items: center;
   justify-content: center;
-  padding: 10px 20px; /* slightly smaller padding for small button */
+  padding: 10px 20px;
+  /* slightly smaller padding for small button */
   background: var(--dark-red);
   color: white;
   text-decoration: none;
@@ -528,7 +535,8 @@ footer {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
-  width: fit-content; /* this makes it only as wide as its content */
+  width: fit-content;
+  /* this makes it only as wide as its content */
   /* Alternatively, you could use: display: inline-flex; */
 }
 
@@ -596,12 +604,6 @@ a {
 .product-details {
   flex: 1;
   min-width: 300px;
-}
-
-.price {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
 }
 
 .availability {
@@ -1451,16 +1453,20 @@ h3 {
   transform: translateY(-3px);
 
 }
+
 /* start text ui helpers */
 .has-text-primary {
   color: var(--dark-red);
 }
-.has-text-green{
-  color:#28a745;
+
+.has-text-green {
+  color: #28a745;
 }
+
 .has-text-weight-bold {
   font-weight: bold;
 }
+
 /* end text ui helpers */
 
 /* start product variants  */
@@ -1485,10 +1491,13 @@ h3 {
   cursor: pointer;
   transition: all 0.25s ease;
   user-select: none;
-  flex: 1 0 auto; /* Key change - allows items to grow */
-  min-width: fit-content; /* Prevents items from becoming too narrow */
+  flex: 1 0 auto;
+  /* Key change - allows items to grow */
+  min-width: fit-content;
+  /* Prevents items from becoming too narrow */
   text-align: center;
-  white-space: nowrap; /* Prevents text wrapping within items */
+  white-space: nowrap;
+  /* Prevents text wrapping within items */
 }
 
 /* Selected state */
@@ -1497,7 +1506,8 @@ h3 {
   color: #fff;
   border-color: #000;
   font-weight: 500;
-  flex-grow: 1.2; /* Selected item can grow slightly more */
+  flex-grow: 1.2;
+  /* Selected item can grow slightly more */
 }
 
 /* Hover effect */
@@ -1512,9 +1522,17 @@ h3 {
 }
 
 @keyframes variantClick {
-  0% { transform: scale(0.96); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(0.96);
+  }
+
+  50% {
+    transform: scale(1.03);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 /* Disabled state */
@@ -1522,7 +1540,8 @@ h3 {
   opacity: 0.5;
   cursor: not-allowed;
   position: relative;
-  flex-grow: 1; /* Disabled items also stretch */
+  flex-grow: 1;
+  /* Disabled items also stretch */
 }
 
 .product-variants__item--disabled::after {

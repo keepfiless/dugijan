@@ -351,3 +351,37 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 // end back to top button
+// START price formatting
+document.addEventListener('DOMContentLoaded', function() {
+  // Get all elements with class 'price'
+  const priceElements = document.querySelectorAll('.price');
+  
+  priceElements.forEach(element => {
+    // Get the raw number from the element's text
+    const rawText = element.textContent.trim();
+    
+    try {
+      // Parse the number (handles both integers and decimals)
+      const numberValue = parseFloat(rawText.replace(/[^\d.-]/g, ''));
+      
+      if (!isNaN(numberValue)) {
+        // Format with commas and optional decimals
+        const formattedValue = new Intl.NumberFormat(undefined, {
+          minimumFractionDigits: rawText.includes('.') ? 2 : 0,
+          maximumFractionDigits: 2
+        }).format(numberValue);
+        
+        // Update the element's content
+        element.textContent = formattedValue;
+        
+        // Add decimal class if needed
+        if (formattedValue.includes('.')) {
+          element.classList.add('decimal');
+        }
+      }
+    } catch (e) {
+      console.warn('Could not format price:', rawText);
+    }
+  });
+});
+// END price formatting

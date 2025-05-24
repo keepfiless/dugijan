@@ -20,7 +20,9 @@
                 {% endfor %}
             </ul>
             <div class="divider"></div>
-            <p class="price" id="product-price">قیمت :‌{{ page.price }} تومان</p>
+            <p  id="product-price">قیمت :‌
+                <span class="price">{{ page.price }}</span>
+                 تومان</p>
             <p class="availability">{{page.product_status}}</p>
             <!-- Add to Cart Button -->
             <button class="add-to-cart-btn" id="addToCartBtn"> <i class="bi bi-bag-plus"></i> افزودن به سبد خرید</button>
