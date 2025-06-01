@@ -729,7 +729,24 @@ a {
 .has-text-danger {
   color: var(--dark-red);
 }
+.has-text-white{
+  color:white !important;
+}
 
+/* paddings  */
+.p-1{
+  padding: 1px !important;
+}
+.p-2{
+  padding: 2px !important;
+}
+.m-1{
+  margin: 1px !important;
+}
+.m-2{
+  margin: 2px !important;
+}
+/* end paddings */
 .notification {
   padding: 10px;
   background-color: var(--dark-red);
