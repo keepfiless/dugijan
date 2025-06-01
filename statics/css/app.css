@@ -73,7 +73,7 @@ body {
   color: var(--dark-gray);
   text-align: right;
   font-size: 20px !important;
-  line-height: 2.5rem;
+  line-height: 1.5;
 }
 
 /* Header Styles - RTL */
@@ -732,7 +732,12 @@ a {
 .has-text-white{
   color:white !important;
 }
-
+.has-text-gray{
+  color : #6e6d7a;
+}
+.has-text-small{
+  font-size: 14px;
+}
 /* paddings  */
 .p-1{
   padding: 1px !important;
