@@ -80,7 +80,7 @@ body {
 header {
   background-color: var(--primary-red);
   color: var(--white);
-  padding: 1rem;
+  padding: 0.2rem;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   position: sticky;
   top: 0;
@@ -94,6 +94,10 @@ header {
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
+  align-content: space-between;
+  /* flex-direction: row-reverse; */
+  flex-wrap: nowrap;
+  align-items: flex-end;
 }
 
 .logo {
@@ -104,7 +108,7 @@ header {
 }
 
 .dugijan-logo {
-  max-height: 2em;
+  max-height: 2rem;
 }
 
 /* Mobile Menu - RTL */
@@ -121,7 +125,7 @@ header {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 nav a {
@@ -267,7 +271,9 @@ footer {
 }
 
 #mainNav>ul>a {
-  border: 1px solid white;
+     border: 1px solid #ffffff1a;
+     border-right: 1px solid white;
+     border-radius: 0;
 }
 
 #mainNav>ul {
@@ -729,28 +735,36 @@ a {
 .has-text-danger {
   color: var(--dark-red);
 }
-.has-text-white{
-  color:white !important;
+
+.has-text-white {
+  color: white !important;
 }
-.has-text-gray{
-  color : #6e6d7a;
+
+.has-text-gray {
+  color: #6e6d7a;
 }
-.has-text-small{
+
+.has-text-small {
   font-size: 14px;
 }
+
 /* paddings  */
-.p-1{
+.p-1 {
   padding: 1px !important;
 }
-.p-2{
+
+.p-2 {
   padding: 2px !important;
 }
-.m-1{
+
+.m-1 {
   margin: 1px !important;
 }
-.m-2{
+
+.m-2 {
   margin: 2px !important;
 }
+
 /* end paddings */
 .notification {
   padding: 10px;
