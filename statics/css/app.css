@@ -271,10 +271,10 @@ footer {
 }
 
 #mainNav>ul>a {
-     border: 1px solid #ffffff1a;
-     border-right: 1px solid white;
+     border-right: 1px solid rgba(255, 255, 255, 0.423);
+     border-left: 1px solid rgba(255, 255, 255, 0.423);
      border-radius: 0;
-}
+} 
 
 #mainNav>ul {
   text-align: center;
