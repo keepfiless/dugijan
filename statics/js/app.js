@@ -385,3 +385,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 // END price formatting
+// start product images
+ function changeMainImage(thumbnail) {
+  const mainImage = document.getElementById('main-product-image');
+  const thumbnails = document.querySelectorAll('.thumbnail');
+  
+  // Update main image
+  mainImage.src = thumbnail.src;
+  
+  // Update active thumbnail
+  thumbnails.forEach(t => t.classList.remove('active'));
+  thumbnail.classList.add('active');
+}
+
+// Optional: Add zoom on hover functionality
+document.querySelector('.zoomable-image')?.addEventListener('mousemove', function(e) {
+  const x = e.clientX - e.target.getBoundingClientRect().left;
+  const y = e.clientY - e.target.getBoundingClientRect().top;
+  this.style.transformOrigin = `${x}px ${y}px`;
+});
+// end product images 
