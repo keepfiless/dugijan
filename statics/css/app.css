@@ -1611,14 +1611,15 @@ h3 {
 }
 
 .main-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid #eee;
-  margin-bottom: 15px;
+position: relative;
+  width: 100%;
+  height: 400px; /* Your fixed container height */
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 400px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  background: #f8f8f8; /* Shows background while image loads */
 }
 
 .zoomable-image {
